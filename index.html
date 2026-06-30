@@ -4,51 +4,159 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>FrostEmpire</title>
+
 <style>
 body {
     margin: 0;
-    font-family: Arial;
-    background: linear-gradient(135deg, #050b1a, #0a1f3d);
+    font-family: Arial, sans-serif;
     color: white;
+    background: radial-gradient(circle at top, #0b1a3a, #02040a);
+    overflow-x: hidden;
+}
+
+/* Hó animáció */
+.snow {
+    position: fixed;
+    top: -10px;
+    width: 6px;
+    height: 6px;
+    background: white;
+    border-radius: 50%;
+    animation: fall linear infinite;
+    opacity: 0.7;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh);
+    }
+}
+
+header {
     text-align: center;
+    padding: 100px 20px 60px;
 }
+
 h1 {
-    font-size: 60px;
-    color: #6ec6ff;
-    margin-top: 80px;
+    font-size: 70px;
+    color: #7fd3ff;
+    text-shadow: 0 0 20px #1e90ff;
 }
-.ip {
+
+.subtitle {
+    font-size: 20px;
+    color: #cfe8ff;
+    margin-top: 10px;
+}
+
+.ip-box {
+    margin-top: 25px;
     display: inline-block;
-    padding: 15px;
-    background: rgba(255,255,255,0.1);
+    padding: 15px 25px;
+    background: rgba(255,255,255,0.08);
     border-radius: 10px;
     cursor: pointer;
+    transition: 0.3s;
 }
+
+.ip-box:hover {
+    background: rgba(255,255,255,0.2);
+}
+
 button {
-    margin-top: 20px;
-    padding: 10px 20px;
-    background: #1e90ff;
+    margin-top: 15px;
+    padding: 12px 25px;
     border: none;
-    color: white;
     border-radius: 8px;
+    background: #1e90ff;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #63b3ff;
+}
+
+section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.card {
+    display: inline-block;
+    margin: 10px;
+    padding: 20px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 12px;
+    width: 220px;
+}
+
+footer {
+    text-align: center;
+    padding: 30px;
+    color: gray;
 }
 </style>
 </head>
+
 <body>
 
-<h1>❄️ FrostEmpire</h1>
-<p>KitPvP Minecraft Server</p>
+<header>
+    <h1>❄️ FrostEmpire</h1>
+    <div class="subtitle">A legjobb KitPvP Minecraft szerver</div>
 
-<div class="ip" onclick="copyIP()">
-frostempire.falix.pro
-</div>
-<br>
-<button onclick="copyIP()">IP másolása</button>
+    <div class="ip-box" onclick="copyIP()">
+        frostempire.falix.pro
+    </div>
+    <br>
+    <button onclick="copyIP()">📋 IP másolása</button>
+</header>
+
+<section>
+    <h2>🎮 Mi vár rád?</h2>
+
+    <div class="card">⚔️ KitPvP harcok</div>
+    <div class="card">💎 Rangok és jutalmak</div>
+    <div class="card">🏆 Top játékosok</div>
+    <div class="card">🎁 Napi rewardok</div>
+</section>
+
+<section>
+    <h2>📌 Szerver információ</h2>
+    <p>IP: <b>frostempire.falix.pro</b></p>
+    <p>Verzió: 1.20+</p>
+    <p>Játékmód: KitPvP</p>
+</section>
+
+<section>
+    <h2>💎 Rangok</h2>
+    <div class="card">VIP</div>
+    <div class="card">MVP</div>
+    <div class="card">ADMIN</div>
+    <div class="card">OWNER</div>
+</section>
+
+<footer>
+    © 2026 FrostEmpire Minecraft Server
+</footer>
 
 <script>
+// IP másolás
 function copyIP(){
-navigator.clipboard.writeText("frostempire.falix.pro");
-alert("IP kimásolva!");
+    navigator.clipboard.writeText("frostempire.falix.pro");
+    alert("IP kimásolva!");
+}
+
+// hó generálás
+for(let i=0;i<60;i++){
+    let snow = document.createElement("div");
+    snow.className = "snow";
+    snow.style.left = Math.random()*100 + "vw";
+    snow.style.animationDuration = (Math.random()*5+3) + "s";
+    snow.style.opacity = Math.random();
+    document.body.appendChild(snow);
 }
 </script>
 
