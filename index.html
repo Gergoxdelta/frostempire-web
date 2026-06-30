@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FrostEmpire</title>
+<style>
+body {
+    margin: 0;
+    font-family: Arial;
+    background: linear-gradient(135deg, #050b1a, #0a1f3d);
+    color: white;
+    text-align: center;
+}
+h1 {
+    font-size: 60px;
+    color: #6ec6ff;
+    margin-top: 80px;
+}
+.ip {
+    display: inline-block;
+    padding: 15px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 10px;
+    cursor: pointer;
+}
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: #1e90ff;
+    border: none;
+    color: white;
+    border-radius: 8px;
+}
+</style>
+</head>
+<body>
+
+<h1>❄️ FrostEmpire</h1>
+<p>KitPvP Minecraft Server</p>
+
+<div class="ip" onclick="copyIP()">
+frostempire.falix.pro
+</div>
+<br>
+<button onclick="copyIP()">IP másolása</button>
+
+<script>
+function copyIP(){
+navigator.clipboard.writeText("frostempire.falix.pro");
+alert("IP kimásolva!");
+}
+</script>
+
+</body>
+</html>
