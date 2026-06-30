@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FrostEmpire</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #050b1a, #0a1f3d);
+    color: white;
+    text-align: center;
+}
+
+header {
+    padding: 80px 20px;
+}
+
+h1 {
+    font-size: 60px;
+    color: #6ec6ff;
+    text-shadow: 0 0 20px #1e90ff;
+}
+
+p {
+    font-size: 20px;
+    color: #cfe8ff;
+}
+
+.ip-box {
+    margin-top: 20px;
+    display: inline-block;
+    padding: 15px 25px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.ip-box:hover {
+    background: rgba(255,255,255,0.2);
+}
+
+button {
+    margin-top: 20px;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    background: #1e90ff;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #63b3ff;
+}
+
+section {
+    padding: 50px 20px;
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+    <h1>❄️ FrostEmpire</h1>
+    <p>KitPvP Minecraft Server</p>
+
+    <div class="ip-box" onclick="copyIP()">
+        frostempire.falix.pro (Kattints a másoláshoz)
+    </div>
+
+    <br>
+    <button onclick="copyIP()">Csatlakozás IP másolása</button>
+</header>
+
+<section>
+    <h2>🎮 Játékmenet</h2>
+    <p>Harcolj más játékosokkal, gyűjts coinokat, és légy a legerősebb a szerveren!</p>
+</section>
+
+<section>
+    <h2>💎 Rangok</h2>
+    <p>VIP, MVP, Admin és még sok más rang vár rád!</p>
+</section>
+
+<section>
+    <h2>📜 Szabályok</h2>
+    <p>Ne csalj, ne káromkodj túl sokat, és tiszteld a játékosokat.</p>
+</section>
+
+<script>
+function copyIP() {
+    navigator.clipboard.writeText("frostempire.falix.pro");
+    alert("IP kimásolva!");
+}
+</script>
+
+</body>
+</html>
